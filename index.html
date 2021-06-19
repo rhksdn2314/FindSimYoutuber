@@ -172,44 +172,45 @@
     }
 
     async function predict() {
-            var image = document.getElementById("face-image");
-            const prediction = await model.predict(image, false);
-            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+        var image = document.getElementById("face-image");
+        const prediction = await model.predict(image, false);
+        prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
 
-            var resultExplain, resultLink;
-            var resultTitle = prediction[0].className
+        var resultExplain, resultLink;
+        var resultTitle = prediction[0].className
 
-            resultLink = "https://www.youtube.com/results?search_query=" + resultTitle;
-            resultExplain = "해당 유튜버의 채널에 들어가 얼굴을 비교해보세요!"
+        resultLink = "https://www.youtube.com/results?search_query=" + resultTitle;
+        resultExplain = "해당 유튜버의 채널에 들어가 얼굴을 비교해보세요!"
 
-            var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
-            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
+        var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
+        var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
 
-            $('.result-message').html(title + explain);
+        $('.result-message').html(title + explain);
 
-            // for (let i = 0; i < maxPredictions; i++) {
-            //     const classPrediction =
-            //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            //     // labelContainer.childNodes[i].innerHTML = classPrediction;
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     // labelContainer.childNodes[i].innerHTML = classPrediction;
 
-                
-            //     // $('.result-message').html(title + explain);
-            //     // var barWidth;
-            //     // for (let i = 0; i < maxPredictions; i++) {
-            //     //     if (prediction[i].probability.toFixed(2) > 0.1) {
-            //     //         barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-            //     //     } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-            //     //         barWidth = "4%"
-            //     //     } else {
-            //     //         barWidth = "2%"
-            //     //     }
-            //     //     var labelTitle = prediction[i].className;
 
-            //     //     var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
-            //     //     var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
-            //     //     labelContainer.childNodes[i].innerHTML = label + bar;
-            //     }
-            // }
+        //     // $('.result-message').html(title + explain);
+        //     // var barWidth;
+        //     // for (let i = 0; i < maxPredictions; i++) {
+        //     //     if (prediction[i].probability.toFixed(2) > 0.1) {
+        //     //         barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+        //     //     } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+        //     //         barWidth = "4%"
+        //     //     } else {
+        //     //         barWidth = "2%"
+        //     //     }
+        //     //     var labelTitle = prediction[i].className;
+
+        //     //     var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+        //     //     var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+        //     //     labelContainer.childNodes[i].innerHTML = label + bar;
+        //     }
+        // }
+    }
     </script>
 </body>
 <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
