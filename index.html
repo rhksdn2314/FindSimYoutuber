@@ -23,8 +23,8 @@
     <meta property="og:url" content="https://youtuberface.netlify.app">
 
     <!-- favicon 위젯 용 -->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favi.ico" type="image/x-icon">
+    <link rel="icon" href="/favi.ico" type="image/x-icon">
     <!-- 공유하기 위젯 용 -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60cd5e29ab286361"></script>
     <!-- 네이버 인증 -->
@@ -204,19 +204,19 @@
     var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
     var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
     $('.result-message').html(title + explain);
-    var barWidth;
-    for (let i = 0; i < maxPredictions; i++) {
-        if (prediction[i].probability.toFixed(2) > 0.1) {
-            barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
-        } else if (prediction[i].probability.toFixed(2) >= 0.01) {
-            barWidth = "4%"
-        } else {
-            barWidth = "2%"
-        }
-        var labelTitle = prediction[i].className;
-        var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>";
-        var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
-        labelContainer.childNodes[i].innerHTML = label + bar;
+    // var barWidth;
+    // for (let i = 0; i < maxPredictions; i++) {
+    //     if (prediction[i].probability.toFixed(2) > 0.1) {
+    //         barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+    //     } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+    //         barWidth = "4%"
+    //     } else {
+    //         barWidth = "2%"
+    //     }
+    //     var labelTitle = prediction[i].className;
+    //     var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>";
+    //     var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>";
+    //     labelContainer.childNodes[i].innerHTML = label + bar;
     </script>
 </body>
 
