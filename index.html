@@ -160,8 +160,8 @@
         const metadataURL = URL + "metadata.json";
 
         model = await tmImage.load(modelURL, metadataURL);
-        //maxPredictions = model.getTotalClasses();
-        maxPredictions = 5;
+        maxPredictions = model.getTotalClasses();
+        //maxPredictions = 5;
 
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
