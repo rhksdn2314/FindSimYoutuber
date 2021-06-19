@@ -1,0 +1,2 @@
+User-agent: *Allow:/
+Sitemap: https://youtuberface.netlify.app/sitemap.xml
